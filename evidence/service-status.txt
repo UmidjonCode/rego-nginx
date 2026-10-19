@@ -1,0 +1,45 @@
+● nginx.service - A high performance web server and a reverse proxy server
+     Loaded: loaded (/usr/lib/systemd/system/nginx.service; enabled; preset: enabled)
+     Active: active (running) since Thu 2026-10-15 09:46:19 UTC; 3 days ago
+ Invocation: 4e358ccc3f124db38971340004bae706
+       Docs: man:nginx(8)
+    Process: 50629 ExecReload=/usr/sbin/nginx -g daemon on; master_process on; -s reload (code=exited, status=0/SUCCESS)
+   Main PID: 47026 (nginx)
+      Tasks: 3 (limit: 627)
+     Memory: 3.5M (peak: 7.3M)
+        CPU: 311ms
+     CGroup: /system.slice/nginx.service
+             ├─47026 "nginx: master process /usr/sbin/nginx -g daemon on; master_process on;"
+             ├─50630 "nginx: worker process"
+             └─50632 "nginx: worker process"
+
+Oct 15 09:46:19 ip-172-31-33-35 systemd[1]: Starting nginx.service - A high performance web server and a reverse proxy server...
+Oct 15 09:46:19 ip-172-31-33-35 systemd[1]: Started nginx.service - A high performance web server and a reverse proxy server.
+Oct 15 10:37:26 ip-172-31-33-35 systemd[1]: Reloading nginx.service - A high performance web server and a reverse proxy server...
+Oct 15 10:37:26 ip-172-31-33-35 nginx[47680]: 2026/10/15 10:37:26 [notice] 47680#47680: signal process started
+Oct 15 10:37:26 ip-172-31-33-35 systemd[1]: Reloaded nginx.service - A high performance web server and a reverse proxy server.
+Oct 16 09:34:44 ip-172-31-33-35 systemd[1]: Reloading nginx.service - A high performance web server and a reverse proxy server...
+Oct 16 09:34:44 ip-172-31-33-35 nginx[50629]: 2026/10/16 09:34:44 [notice] 50629#50629: signal process started
+Oct 16 09:34:44 ip-172-31-33-35 systemd[1]: Reloaded nginx.service - A high performance web server and a reverse proxy server.
+
+● rego-fastapi.service - Example FastAPI backend
+     Loaded: loaded (/etc/systemd/system/rego-fastapi.service; enabled; preset: enabled)
+     Active: active (running) since Thu 2026-10-15 06:11:11 UTC; 3 days ago
+ Invocation: 76ed776bcb774a29ba42e532d535d6db
+   Main PID: 45939 (uvicorn)
+      Tasks: 2 (limit: 627)
+     Memory: 40.5M (peak: 44.4M)
+        CPU: 8min 22.008s
+     CGroup: /system.slice/rego-fastapi.service
+             └─45939 /opt/rego-fastapi/.venv/bin/python3 /opt/rego-fastapi/.venv/bin/uvicorn main:app --host 0.0.0.0 --port 8000
+
+Oct 15 06:11:12 ip-172-31-33-35 uvicorn[45939]: INFO:     Application startup complete.
+Oct 15 06:11:12 ip-172-31-33-35 uvicorn[45939]: INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+Oct 15 09:53:01 ip-172-31-33-35 uvicorn[45939]: INFO:     127.0.0.1:45088 - "GET /health HTTP/1.1" 200 OK
+Oct 16 09:34:59 ip-172-31-33-35 uvicorn[45939]: INFO:     3.26.231.99:0 - "GET /health HTTP/1.1" 200 OK
+Oct 17 09:26:55 ip-172-31-33-35 uvicorn[45939]: INFO:     163.192.219.92:0 - "GET /.env HTTP/1.1" 404 Not Found
+Oct 17 09:26:57 ip-172-31-33-35 uvicorn[45939]: INFO:     163.192.219.92:0 - "GET /.env.production HTTP/1.1" 404 Not Found
+Oct 17 09:43:50 ip-172-31-33-35 uvicorn[45939]: INFO:     180.181.122.134:0 - "GET /vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php HTTP/1.1" 404 Not Found
+Oct 17 12:17:57 ip-172-31-33-35 uvicorn[45939]: INFO:     193.124.20.232:0 - "GET /mcp HTTP/1.1" 404 Not Found
+Oct 18 06:38:40 ip-172-31-33-35 uvicorn[45939]: INFO:     101.96.220.35:0 - "GET /vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php HTTP/1.1" 404 Not Found
+Oct 19 02:43:28 ip-172-31-33-35 uvicorn[45939]: INFO:     3.26.231.99:0 - "GET /health HTTP/1.1" 200 OK

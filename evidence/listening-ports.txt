@@ -1,0 +1,4 @@
+Netid State  Recv-Q Send-Q     Local Address:Port Peer Address:PortProcess                                                                            
+tcp   LISTEN 0      2048             0.0.0.0:8000      0.0.0.0:*    users:(("uvicorn",pid=45939,fd=6))                                                
+tcp   LISTEN 0      511              0.0.0.0:80        0.0.0.0:*    users:(("nginx",pid=50632,fd=5),("nginx",pid=50630,fd=5),("nginx",pid=47026,fd=5))
+tcp   LISTEN 0      511                 [::]:80           [::]:*    users:(("nginx",pid=50632,fd=6),("nginx",pid=50630,fd=6),("nginx",pid=47026,fd=6))

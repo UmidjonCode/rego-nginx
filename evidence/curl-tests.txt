@@ -1,0 +1,89 @@
+=== GET / ===
+HTTP/1.1 200 OK
+Server: nginx/1.28.3 (Ubuntu)
+Date: Mon, 19 Oct 2026 02:55:30 GMT
+Content-Type: text/html
+Content-Length: 429
+Last-Modified: Thu, 15 Oct 2026 10:34:08 GMT
+Connection: keep-alive
+ETag: "6ad0ac20-1ad"
+Accept-Ranges: bytes
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Day 3 - Nginx</title>
+    <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+    <div class="card">
+        <h1>Rego Cloud DevOps Internship</h1>
+        <h2>Day 3 - Nginx Static Hosting</h2>
+        <p>Intern: <strong>Hopejon (Sizning Ismingiz)</strong></p>
+        <p><a href="/about.html">About Page</a></p>
+    </div>
+</body>
+</html>
+
+
+=== GET /about.html ===
+HTTP/1.1 200 OK
+Server: nginx/1.28.3 (Ubuntu)
+Date: Mon, 19 Oct 2026 02:55:31 GMT
+Content-Type: text/html
+Content-Length: 484
+Last-Modified: Thu, 15 Oct 2026 10:34:37 GMT
+Connection: keep-alive
+ETag: "6ad0ac3d-1e4"
+Accept-Ranges: bytes
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About - Day 3</title>
+    <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+    <div class="card">
+        <h1>About the Project</h1>
+        <h2>Rego Cloud DevOps Internship</h2>
+        <p>This page demonstrates static website hosting with Nginx.</p>
+        <p>Intern: <strong>Hopejon (Sizning Ismingiz)</strong></p>
+        <p><a href="/">Back to Home</a></p>
+    </div>
+</body>
+</html>
+
+
+
+=== GET /api/health ===
+HTTP/1.1 200 OK
+Server: nginx/1.28.3 (Ubuntu)
+Date: Mon, 19 Oct 2026 02:55:31 GMT
+Content-Type: application/json
+Content-Length: 62
+Connection: keep-alive
+
+{"status":"ok","timestamp":"2026-10-19T02:55:31.020064+00:00"}
+
+=== POST /api/tasks (201) ===
+HTTP/1.1 201 Created
+Server: nginx/1.28.3 (Ubuntu)
+Date: Mon, 19 Oct 2026 02:55:31 GMT
+Content-Type: application/json
+Content-Length: 95
+Connection: keep-alive
+
+{"id":1,"title":"Test Task","description":null,"created_at":"2026-10-19T02:55:31.033525+00:00"}
+
+=== GET /api/tasks ===
+HTTP/1.1 200 OK
+Server: nginx/1.28.3 (Ubuntu)
+Date: Mon, 19 Oct 2026 02:55:31 GMT
+Content-Type: application/json
+Content-Length: 97
+Connection: keep-alive
+
+[{"id":1,"title":"Test Task","description":null,"created_at":"2026-10-19T02:55:31.033525+00:00"}]
